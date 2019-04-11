@@ -17,7 +17,11 @@ const UserSchema = new Schema({
     admin:{
         type:Number,
         default:0
+    },
+    time:{
+        type:Date,
+        default: Date.now()
     }
-})
+});
 
 module.exports=Users=mongoose.model('users',UserSchema);

@@ -7,7 +7,10 @@ const mongoose = require('mongoose');
 const bodyParser=require('body-parser');
 
 // 用户路由
-const Users=require('./routers/api/users')
+const Users=require('./routers/api/users');
+
+const Food=require('./routers/api/food');
+
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
@@ -22,7 +25,8 @@ mongoose.connect('mongodb://localhost:27017/baoleme',{ useNewUrlParser: true })
         console.log(err)
 });
 
-app.use('/api/users',Users)
+app.use('/api/users',Users);
+app.use('/api/food',Food);
 
 const port = process.env.PORT || 5000;
 
