@@ -20,11 +20,10 @@ const FoodImg=require('./routers/api/foodimg');
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
-// app.use(express.static(path.join(`${__dirname}/../baoleme`, 'dist')));
+app.use(express.static(path.join(`${__dirname}/../baoleme`, 'dist')));
 
 app.get('/', function (req, res) {
-    // res.sendFile(`${__dirname}/../baoleme/dist/index.html`);
-    res.send('hi')
+    res.sendFile(`${__dirname}/../baoleme/dist/index.html`);
 });
 
 mongoose.connect('mongodb://localhost:27017/baoleme',{ useNewUrlParser: true })
