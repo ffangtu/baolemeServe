@@ -28,7 +28,7 @@ app.get('/', function (req, res) {
 
 mongoose.connect('mongodb://localhost:27017/baoleme',{ useNewUrlParser: true })
     .then(re=>{
-        console.log('数据库已连接')
+        console.log('数据库已连接','shujukulianjie')
     }).catch(err=>{
         console.log(err)
 });
@@ -39,6 +39,7 @@ app.use('/api/foodimg',FoodImg);
 
 const port = process.env.PORT || 5000;
 
-app.listen(port, () => {
+const server=app.listen(port, (req,res) => {
+    console.log(server.address().address,server.address().port);
     console.log('Serve Running')
 });
