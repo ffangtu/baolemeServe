@@ -46,7 +46,6 @@ app.use('/api/order',Order);
 
 const port = process.env.PORT || 5000;
 
-const server = app.listen(port, 'localhost', (req, res) => {
-    console.log(server.address().address, server.address().port);
+const server = app.listen(port, (req, res) => {
     console.log('Serve Running')
 });
