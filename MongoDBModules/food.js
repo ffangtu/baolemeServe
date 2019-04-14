@@ -15,7 +15,8 @@ const FoodSchema=new Schema({
         required: true
     },
     FoodImg:{
-        type:String
+        type:String,
+        required:true
     },
     FoodPrice:{
         type:Number,

@@ -30,7 +30,7 @@ Router.post('/getFood',(req,res)=>{
         Food.find({FoodType:req.body.FoodType})
             .then(food=>{
                 food.map(item=>{
-                    item.FoodImg=`//${ip}:5000${item.FoodImg}` ;
+                    item.FoodImg=`${item.FoodImg}` ;
                     return {
                         ...item
                     }
@@ -44,7 +44,7 @@ Router.post('/getFood',(req,res)=>{
         Food.find({})
             .then(food=>{
                 food.map(item=>{
-                   item.FoodImg=`//${ip}:5000${item.FoodImg}` ;
+                   item.FoodImg=`${item.FoodImg}` ;
                    return {
                        ...item
                    }
