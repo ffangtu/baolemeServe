@@ -21,8 +21,8 @@ const FoodSchema=new Schema({
         type:Number,
         required:true
     },
-    Surplus:{
-        type:Number,
+    desc:{
+        type:String,
         required:true
     }
 });
