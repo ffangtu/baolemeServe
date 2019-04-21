@@ -21,6 +21,9 @@ const UserSchema = new Schema({
     time:{
         type:Date,
         default: Date.now()
+    },
+    address:{
+        type:String
     }
 });
 
