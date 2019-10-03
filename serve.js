@@ -33,7 +33,11 @@ app.get('/', function (req, res) {
 });
 
 app.get('/chat', function (req, res) {
-    res.sendFile(`${__dirname}/../chat/dist/index.html`);
+    try {
+        res.sendFile(`${__dirname}/../chat/dist/index.html`);
+    } catch (e) {
+        res.json({text:'errpr'})
+    }
 });
 
 mongoose.connect('mongodb://47.98.47.228:27017/baoleme', {useNewUrlParser: true})
