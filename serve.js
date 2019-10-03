@@ -32,7 +32,11 @@ app.get('/', function (req, res) {
     res.sendFile(`${__dirname}/../baoleme/dist/index.html`);
 });
 
-mongoose.connect('mongodb://localhost:27017/baoleme', {useNewUrlParser: true})
+app.get('/chat', function (req, res) {
+    res.sendFile(`${__dirname}/../chat/dist/index.html`);
+});
+
+mongoose.connect('mongodb://47.98.47.228:27017/baoleme', {useNewUrlParser: true})
     .then(re => {
         console.log('数据库已连接', 'shujukulianjie')
     }).catch(err => {
